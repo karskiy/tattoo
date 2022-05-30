@@ -30,6 +30,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<!-- Do the left sidebar check -->
 			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
 
+
+            <!-- Page About me -->
+            <?php
+            $id = 29;
+            $p = get_page($id);
+            $t = $p->post_title;
+            echo '<h2>'.apply_filters('post_title', $t).'</h2>';
+            echo apply_filters('the_content', $p->post_content);
+            ?>
+
+
 			<main class="site-main" id="main">
 
 				<?php
