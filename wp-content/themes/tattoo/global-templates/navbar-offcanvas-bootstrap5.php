@@ -44,7 +44,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
-		<div class="offcanvas offcanvas-end bg-transparent" tabindex="-1" id="navbarNavOffcanvas">
+		<div class="offcanvas offcanvas-end" tabindex="-1" id="navbarNavOffcanvas">
 
 			<div class="offcanvas-header justify-content-end">
 				<button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
