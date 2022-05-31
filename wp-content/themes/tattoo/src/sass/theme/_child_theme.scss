@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+.home .navbar {
+  background-image: url("../images/promo_bottom.png"), url("../images/promo.jpg");
+  background-position: bottom center, bottom center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Amatic SC', sans-serif;
+}
+
+.navbar-nav > li{
+  font-family: 'Amatic SC', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 32px;
+  text-align: center;
+  color: #FEFDFE;
+}
