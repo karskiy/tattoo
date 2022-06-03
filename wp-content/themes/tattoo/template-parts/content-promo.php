@@ -1,4 +1,4 @@
-<div class="site-promo">
+<div class="site-promo py-5">
     <div class="container-fluid container-md">
         <div class="row">
             <div class="col">
