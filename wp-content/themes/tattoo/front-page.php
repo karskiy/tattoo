@@ -36,8 +36,9 @@ $container = get_theme_mod('understrap_container_type');
                         </div>
                         <div class="col-6 col-lg-4 offset-1">
                             <?php
-                            echo '<h2>' . get_post_field('post_title', 29) . '</h2>';
-                            echo get_post_field('post_content', 29);
+                            echo '<h2 class="mb-5 display-4">' . get_post_field('post_title', 29) . '</h2>';
+                            $content = apply_filters('the_content', get_post_field('post_content', 29));
+                            echo  $content;
                             ?>
                             <p class="mt-4 text-center">
                                 <button type="button" class="btn btn-outline-light rounded-0" data-bs-toggle="modal"
@@ -53,7 +54,7 @@ $container = get_theme_mod('understrap_container_type');
             <!-- СВОБОДНЫЕ ЭСКИЗЫ -->
             <div id="sketch" class="site-sketch">
                 <div class="container-fluid container-md">
-                    <?php echo '<h2>' . get_post_field('post_title', 69) . '</h2>'; ?>
+                    <?php echo '<h2 class="display-4">' . get_post_field('post_title', 69) . '</h2>'; ?>
                 </div>
             </div>
 
@@ -85,7 +86,7 @@ $container = get_theme_mod('understrap_container_type');
 
             <!-- ПОРТФОЛИО -->
             <div id="portfolio" class="container-fluid container-md">
-                <?php echo '<h2>' . get_post_field('post_title', 71) . '</h2>'; ?>
+                <?php echo '<h2 class="mb-5 display-4">' . get_post_field('post_title', 71) . '</h2>'; ?>
 
                 <div class="row">
                     <?php
@@ -128,5 +129,23 @@ $container = get_theme_mod('understrap_container_type');
             </div>
         </div>
     </div>
+
+    <div id="soul" class="site-about py-5">
+        <div class="container-fluid container-md">
+            <div class="row">
+                <!-- Page About me -->
+                <div class="col-5">
+                    <?php echo get_the_post_thumbnail(75, 'full', array('class' => 'alignleft')); ?>
+                </div>
+                <div class="col-6 col-lg-4 offset-1">
+                    <?php
+                    echo '<h2 class="mb-5 display-4">' . get_post_field('post_title', 75) . '</h2>';
+                    $content = apply_filters('the_content', get_post_field('post_content', 75));
+                    echo  $content;
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div><!-- #soul -->
 <?php
 get_footer();
