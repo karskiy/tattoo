@@ -31,10 +31,10 @@ $container = get_theme_mod('understrap_container_type');
                 <div class="container-fluid container-md">
                     <div class="row">
                         <!-- Page About me -->
-                        <div class="col-5">
+                        <div class="col-12 col-md-5">
                             <?php echo get_the_post_thumbnail(29, 'full', array('class' => 'alignleft')); ?>
                         </div>
-                        <div class="col-6 col-lg-4 offset-1">
+                        <div class="col-12 col-md-5 col-lg-4 offset-1">
                             <?php
                             echo '<h2 class="mb-5 display-4">' . get_post_field('post_title', 29) . '</h2>';
                             $content = apply_filters('the_content', get_post_field('post_content', 29));
@@ -73,7 +73,7 @@ $container = get_theme_mod('understrap_container_type');
                                 <div class="container-fluid container-md">
                                     <div class="row">
                                         <?php foreach( $images as $image_id ): ?>
-                                            <div class="col">
+                                            <div class="col-6 col-md">
                                                 <?php echo wp_get_attachment_image( $image_id['ID'], $size ); ?>
                                             </div>
                                         <?php endforeach; ?>
@@ -105,9 +105,9 @@ $container = get_theme_mod('understrap_container_type');
                 <div class="row">
                     <?php
                     $gallery = get_post_gallery_images(71);
-                    $gallery = array_chunk($gallery, 3);
+                    $gallery = array_chunk($gallery, wp_is_mobile() ? 2: 3);
                     foreach ($gallery as &$value) {
-                        print '<div class="col-4">';
+                        print '<div class="col-6 col-md-4">';
                         foreach ($value as $key => $val) {
                             ?>
                             <img src="<?php echo esc_url($val); ?>" class="img-fluid border-0 mb-4" alt="Пример работ"/>
@@ -132,7 +132,7 @@ $container = get_theme_mod('understrap_container_type');
                                 $image = get_sub_field('img');
                                 $text = get_sub_field('txt');
                                 ?>
-                                <div class="col-6 col-lg-4">
+                                <div class="col-12 col-md-6 col-lg-4">
                                     <div class="row">
                                         <div class="col-auto">
                                             <img src="<?php echo $image; ?>" alt="Картинка">
@@ -153,6 +153,24 @@ $container = get_theme_mod('understrap_container_type');
 
     </div><!-- #page-wrapper -->
 
+    <!-- ДЛЯ Души -->
+    <div id="soul" class="site-about py-5">
+        <div class="container-fluid container-md">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <?php echo get_the_post_thumbnail(75, 'full', array('class' => 'alignleft')); ?>
+                </div>
+                <div class="col-11 col-md-5 offset-1">
+                    <?php
+                    echo '<h2 class="mb-5 display-4">' . get_post_field('post_title', 75) . '</h2>';
+                    $content = apply_filters('the_content', get_post_field('post_content', 75));
+                    echo $content;
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div><!-- #soul -->
+
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -168,23 +186,5 @@ $container = get_theme_mod('understrap_container_type');
             </div>
         </div>
     </div>
-
-    <div id="soul" class="site-about py-5">
-        <div class="container-fluid container-md">
-            <div class="row">
-                <!-- Page About me -->
-                <div class="col-6">
-                    <?php echo get_the_post_thumbnail(75, 'full', array('class' => 'alignleft')); ?>
-                </div>
-                <div class="col-5 offset-1">
-                    <?php
-                    echo '<h2 class="mb-5 display-4">' . get_post_field('post_title', 75) . '</h2>';
-                    $content = apply_filters('the_content', get_post_field('post_content', 75));
-                    echo $content;
-                    ?>
-                </div>
-            </div>
-        </div>
-    </div><!-- #soul -->
 <?php
 get_footer();
