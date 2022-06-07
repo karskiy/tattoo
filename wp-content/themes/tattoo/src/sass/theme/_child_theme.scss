@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
-
-.home .navbar {
+/*.home .navbar {
   background-image: url("../images/promo_bottom_1.png"), url("../images/promo.jpg");
   background-position: bottom center, bottom center;
   background-repeat: no-repeat, no-repeat;
   background-size: cover, cover;
+}*/
+
+.home .navbar {
+  background-image: url("../images/bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -22,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body, p{
-  font-family: 'JejuMyeongjo', sans-serif;
+  font-size: 20px;
 }
 
 .offcanvas{
@@ -31,10 +37,11 @@ body, p{
 }
 
 #wrapper-footer-full{
-  background-image: url("../images/footer.jpg");
+  background-image: url("../images/footer_bg.jpg");
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 548px;
 }
 
 .site-promo{
@@ -49,4 +56,39 @@ body, p{
   background-position: bottom center;
   background-repeat: repeat-y;
   background-size: cover;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+  font-size: 25px;
+}
+
+.gallery .gallery-item{
+
+}
+
+.gallery .gallery-item:first-child{
+  margin-left: 0;
+}
+
+
+.gallery .gallery-item:last-child{
+  margin-right: 0;
+}
+
+#wrapper-footer{
+  display: none;
+}
+
+#page-wrapper{
+  padding: 0;
+}
+
+.footer-widget h3{
+  font-size: 50px;
+  margin-bottom: 50px;
+}
+
+.footer-widget a{
+  color: #FEFDFE;
+  text-decoration: none;
 }

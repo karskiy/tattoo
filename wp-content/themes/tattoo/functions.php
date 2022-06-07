@@ -92,3 +92,9 @@ add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_co
 function understrap_site_info(){
     return false;
 }
+
+
+add_action('wp_head',function (){
+?>
+<?php
+}, 1);

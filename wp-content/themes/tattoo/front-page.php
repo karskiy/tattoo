@@ -38,10 +38,11 @@ $container = get_theme_mod('understrap_container_type');
                             <?php
                             echo '<h2 class="mb-5 display-4">' . get_post_field('post_title', 29) . '</h2>';
                             $content = apply_filters('the_content', get_post_field('post_content', 29));
-                            echo  $content;
+                            echo $content;
                             ?>
-                            <p class="mt-4 text-center">
-                                <button type="button" class="btn btn-outline-light rounded-0" data-bs-toggle="modal"
+                            <p class="mt-5 text-center">
+                                <button type="button" class="btn btn-lg btn-outline-light rounded-0 mt-4 mt-lg-4"
+                                        data-bs-toggle="modal"
                                         data-bs-target="#exampleModal">Написать мастеру
                                 </button>
                             </p>
@@ -52,41 +53,54 @@ $container = get_theme_mod('understrap_container_type');
 
 
             <!-- СВОБОДНЫЕ ЭСКИЗЫ -->
-            <div id="sketch" class="site-sketch">
+            <div id="sketch" class="site-sketch my-5">
                 <div class="container-fluid container-md">
-                    <?php echo '<h2 class="display-4">' . get_post_field('post_title', 69) . '</h2>'; ?>
+                    <?php echo '<h2 class="pt-0 pt-lg-5 display-4">' . get_post_field('post_title', 69) . '</h2>'; ?>
                 </div>
             </div>
 
-            <div id="sketchСarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <?php get_template_part('template-parts/content', 'promo'); ?>
+
+            <?php $i =0; if (have_rows('t_gallery', 69)): ?>
+                <div id="sketchСarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <?php while (have_rows('t_gallery', 69)): the_row();
+                            $images = get_sub_field('t_photo');
+                            $size = 'full';
+                            $i++;
+                            ?>
+                            <div class="carousel-item <?php echo $i === 1? ' active' : ''; ?>">
+                                <?php if( $images ): ?>
+                                <div class="container-fluid container-md">
+                                    <div class="row">
+                                        <?php foreach( $images as $image_id ): ?>
+                                            <div class="col">
+                                                <?php echo wp_get_attachment_image( $image_id['ID'], $size ); ?>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                                <?php endif; ?>
+                            </div>
+                        <?php endwhile; ?>
                     </div>
-                    <div class="carousel-item">
-                        <?php get_template_part('template-parts/content', 'promo'); ?>
-                    </div>
-                    <div class="carousel-item">
-                        <?php get_template_part('template-parts/content', 'promo'); ?>
-                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#sketchСarousel"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#sketchСarousel"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#sketchСarousel"
-                        data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#sketchСarousel"
-                        data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-            <!-- #sketch -->
+                <!-- #sketch -->
+            <?php endif; ?>
 
 
             <!-- ПОРТФОЛИО -->
-            <div id="portfolio" class="container-fluid container-md">
-                <?php echo '<h2 class="mb-5 display-4">' . get_post_field('post_title', 71) . '</h2>'; ?>
+            <div id="portfolio" class="container-fluid container-md my-5">
+                <?php echo '<h2 class="py-5 display-4">' . get_post_field('post_title', 71) . '</h2>'; ?>
 
                 <div class="row">
                     <?php
@@ -107,6 +121,34 @@ $container = get_theme_mod('understrap_container_type');
             </div>
 
 
+            <!-- УСЛУГИ И ЦЕНЫ -->
+            <div id="price" class="site-sketch my-5">
+                <div class="container-fluid container-md">
+                    <?php echo '<h2 class="pt-0 pt-lg-5 display-4">' . get_post_field('post_title', 73) . '</h2>'; ?>
+
+                    <?php if( have_rows('t_block', 73) ): ?>
+                        <div class="row">
+                            <?php while( have_rows('t_block', 73) ): the_row();
+                                $image = get_sub_field('img');
+                                $text = get_sub_field('txt');
+                                ?>
+                                <div class="col-6 col-lg-4">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <img src="<?php echo $image; ?>" alt="Картинка">
+                                        </div>
+                                        <div class="col d-flex align-items-center">
+                                            <?php echo $text; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                        </div
+                    <?php endif; ?>
+                </div>
+            </div>
+
+
         </div><!-- #content -->
 
     </div><!-- #page-wrapper -->
@@ -115,16 +157,13 @@ $container = get_theme_mod('understrap_container_type');
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content bg-secondary">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h3 class="modal-title display-4" id="exampleModalLabel">Напишите мне )</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <?php echo do_shortcode('[contact-form-7 id="41" title="Контактная форма 1"]'); ?>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
                 </div>
             </div>
         </div>
@@ -134,14 +173,14 @@ $container = get_theme_mod('understrap_container_type');
         <div class="container-fluid container-md">
             <div class="row">
                 <!-- Page About me -->
-                <div class="col-5">
+                <div class="col-6">
                     <?php echo get_the_post_thumbnail(75, 'full', array('class' => 'alignleft')); ?>
                 </div>
-                <div class="col-6 col-lg-4 offset-1">
+                <div class="col-5 offset-1">
                     <?php
                     echo '<h2 class="mb-5 display-4">' . get_post_field('post_title', 75) . '</h2>';
                     $content = apply_filters('the_content', get_post_field('post_content', 75));
-                    echo  $content;
+                    echo $content;
                     ?>
                 </div>
             </div>
