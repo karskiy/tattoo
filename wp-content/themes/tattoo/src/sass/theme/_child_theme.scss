@@ -98,3 +98,9 @@ body, p{
 .footer-widget .wpcf7{
   max-width: 360px;
 }
+
+.footer-widget .wpcf7 input[type=submit],
+.footer-widget .wpcf7 input::placeholder {
+  color: #fff !important;
+}
+
