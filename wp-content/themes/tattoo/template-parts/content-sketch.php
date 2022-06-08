@@ -16,7 +16,7 @@
                             <div class="container-fluid container-md">
                                 <div class="row">
                                     <?php foreach( $images as $image_id ): ?>
-                                        <div class="col-6 col-md">
+                                        <div class="col-6 col-md mb-4 mb-md-0">
                                             <?php echo wp_get_attachment_image( $image_id['ID'], $size ); ?>
                                         </div>
                                     <?php endforeach; ?>

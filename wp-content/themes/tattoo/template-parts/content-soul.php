@@ -6,7 +6,7 @@
             </div>
             <div class="col-11 col-md-5 offset-1">
                 <?php
-                echo '<h2 class="mb-5 display-4">' . get_post_field('post_title', 75) . '</h2>';
+                echo '<h2 class="mb-5 mt-5 mt-sm-0 display-4">' . get_post_field('post_title', 75) . '</h2>';
                 $content = apply_filters('the_content', get_post_field('post_content', 75));
                 echo $content;
                 ?>

@@ -8,10 +8,10 @@
                     ?>
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="row">
-                            <div class="col-auto d-flex align-items-center">
+                            <div class="col-5 col-sm-auto d-flex align-items-center">
                                 <img src="<?php echo $image; ?>" alt="Картинка">
                             </div>
-                            <div class="col d-flex align-items-center">
+                            <div class="col-7 col-sm d-flex align-items-center">
                                 <?php echo $text; ?>
                             </div>
                         </div>
