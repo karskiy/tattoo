@@ -47,10 +47,7 @@ body, p{
 }
 
 .site-promo{
-  background-image: url("../images/site-promo.png");
-  background-position: bottom center;
-  background-repeat: repeat-y;
-  background-size: cover;
+
 }
 
 .site-about{
@@ -104,3 +101,20 @@ body, p{
   color: #fff !important;
 }
 
+
+.wrapper{
+  background-image: url("../images/bg.png");
+  background-position: top center;
+  background-repeat: repeat-y;
+  background-size: cover;
+}
+
+
+@media (max-width: 575.98px) {
+  #wpcf7-f87-o2{
+    max-width: 180px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 90px !important;
+  }
+}

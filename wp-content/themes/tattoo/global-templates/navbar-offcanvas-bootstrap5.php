@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<nav id="main-nav" class="min-vh-100 navbar align-items-start navbar-expand-md navbar-dark bg-transparent pt-4 pb-0" aria-labelledby="main-nav-label">
+<nav id="main-nav" class="<?php echo is_front_page() ? 'min-vh-100 ' : 'mb-5';?> navbar align-items-start navbar-expand-md navbar-dark bg-transparent pt-4 pb-0" aria-labelledby="main-nav-label">
 
 	<h2 id="main-nav-label" class="screen-reader-text">
 		<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
@@ -40,7 +40,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		?>
 		<!-- end custom logo -->
 
-		<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNavOffcanvas" aria-controls="navbarNavOffcanvas" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
+		<button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNavOffcanvas" aria-controls="navbarNavOffcanvas" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
