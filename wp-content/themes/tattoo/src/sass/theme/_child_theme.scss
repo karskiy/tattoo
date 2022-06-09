@@ -109,6 +109,10 @@ body, p{
   background-size: cover;
 }
 
+.page .gallery .gallery-item{
+  max-width: 100% !important;
+}
+
 
 @media (max-width: 575.98px) {
   #wpcf7-f87-o2{
