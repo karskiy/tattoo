@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<nav id="main-nav" class="<?php echo is_front_page() ? 'min-vh-100 ' : 'mb-5';?> navbar align-items-start navbar-expand-md navbar-dark bg-transparent pt-4 pb-0" aria-labelledby="main-nav-label">
+<nav id="main-nav" class="<?php echo is_front_page() ? '' : 'mb-5';?> navbar align-items-start navbar-expand-md navbar-dark bg-transparent pt-4 pb-0" aria-labelledby="main-nav-label">
 
 	<h2 id="main-nav-label" class="screen-reader-text">
 		<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>

@@ -1,18 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
-@import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
-
-/*.home .navbar {
-  background-image: url("../images/promo_bottom_1.png"), url("../images/promo.jpg");
-  background-position: bottom center, bottom center;
-  background-repeat: no-repeat, no-repeat;
-  background-size: cover, cover;
-}*/
+@import url('https://fonts.googleapis.com/earlyaccess/jejumyeongjo.css');
 
 .home .navbar {
   background-image: url("../images/bg.jpg");
-  background-position: center;
+  background-position: inherit;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -27,6 +20,10 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 32px;
   text-align: center;
   color: #FEFDFE;
+}
+
+.home .navbar {
+  min-height: 100vh;
 }
 
 body, p{
@@ -109,10 +106,15 @@ body, p{
   background-size: cover;
 }
 
-.page .gallery .gallery-item{
+.page:not(.home) .gallery .gallery-item{
   max-width: 100% !important;
 }
 
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  width: 3.5rem !important;
+  height: 3.5rem;
+}
 
 @media (max-width: 575.98px) {
   #wpcf7-f87-o2{
@@ -120,5 +122,25 @@ body, p{
     margin-left: auto;
     margin-right: auto;
     margin-top: 90px !important;
+  }
+  .custom-logo-link .img-fluid{
+    max-width: 75px;
+  }
+  .home .navbar {
+    min-height: 30vh;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .home .navbar {
+    background-size: cover;
+  }
+}
+
+
+@media (max-width: 767.98px) {
+  .home .navbar {
+    min-height: 45vh;
   }
 }
