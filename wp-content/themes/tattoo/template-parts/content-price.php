@@ -1,5 +1,5 @@
 <div id="price" class="site-price my-5">
-    <div class="container-fluid container-md">
+    <div class="container-fluid container-md mb-0 mb-lg-5">
         <?php echo '<h2 class="pt-0 pt-lg-5 mb-5 display-4">' . get_post_field('post_title', 73) . '</h2>'; ?>
 
         <?php if( have_rows('t_block', 73) ): ?>
