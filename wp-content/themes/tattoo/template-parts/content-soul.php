@@ -1,8 +1,8 @@
-<div id="soul" class="site-about py-5">
+<div id="soul" class="site-about py-0 py-lg-5">
     <div class="container-fluid container-md">
         <div class="row">
             <div class="col-12 col-md-6">
-                <?php echo get_the_post_thumbnail(75, 'full', array('class' => 'alignleft')); ?>
+                <?php echo get_the_post_thumbnail(75, 'full', array('id' => 'soul-img', 'class' => 'mb-4 mb-md-0')); ?>
             </div>
             <div class="col-12 col-md-5 offset-0 offset-md-1">
                 <?php

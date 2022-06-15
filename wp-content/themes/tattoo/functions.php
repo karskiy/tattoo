@@ -94,7 +94,8 @@ function understrap_site_info(){
 }
 
 
-add_action('wp_head',function (){
+add_action('wp_footer',function (){
 ?>
+
 <?php
-}, 1);
+}, 10000);

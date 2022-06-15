@@ -58,5 +58,9 @@ $container = get_theme_mod('understrap_container_type');
             </div>
         </div>
     </div>
+
+    <!-- Go to top -->
 <?php
 get_footer();
+
+

@@ -94,8 +94,10 @@ p {
 
 abbr[title],
 abbr[data-bs-original-title] {
+  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
   cursor: help;
+  -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
 }
 
@@ -386,6 +388,10 @@ legend + * {
   padding: 0;
 }
 
+::-webkit-file-upload-button {
+  font: inherit;
+}
+
 ::file-selector-button {
   font: inherit;
 }
@@ -440,7 +446,7 @@ progress {
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
   --bs-primary: #B49B9B;
-  --bs-secondary: #6c757d;
+  --bs-secondary: #33202A;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
@@ -448,7 +454,7 @@ progress {
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
   --bs-primary-rgb: 180, 155, 155;
-  --bs-secondary-rgb: 108, 117, 125;
+  --bs-secondary-rgb: 51, 32, 42;
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 255, 193, 7;
@@ -462,7 +468,7 @@ progress {
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: jejumyeongjo-regular, JejuMyeongjo, sans-serif;
+  --bs-body-font-family: Jeju Myeongjo, serif;
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
@@ -548,15 +554,15 @@ progress {
 }
 
 .table-secondary {
-  --bs-table-bg: #e2e3e5;
-  --bs-table-striped-bg: #d7d8da;
+  --bs-table-bg: #d6d2d4;
+  --bs-table-striped-bg: #cbc8c9;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #cbccce;
+  --bs-table-active-bg: #c1bdbf;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #d1d2d4;
+  --bs-table-hover-bg: #c6c2c4;
   --bs-table-hover-color: #000;
   color: #000;
-  border-color: #cbccce;
+  border-color: #c1bdbf;
 }
 
 .table-success {
@@ -947,12 +953,12 @@ progress {
 
 .has-secondary-color,
 .has-secondary-color:visited {
-  color: #6c757d;
+  color: #33202A;
 }
 
 .has-secondary-background-color {
-  background-color: #6c757d;
-  border-color: #6c757d;
+  background-color: #33202A;
+  border-color: #33202A;
 }
 
 .has-success-color,
