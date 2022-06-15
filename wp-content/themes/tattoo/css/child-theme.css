@@ -15732,6 +15732,11 @@ body, p {
   .home .navbar {
     min-height: 30vh;
   }
+
+  .gallery-icon {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
 }
 @media (min-width: 1200px) {
   .home .navbar {

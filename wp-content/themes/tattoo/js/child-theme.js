@@ -3704,7 +3704,15 @@
 
 
 	  const divFooter = document.getElementById("text-2");
-	  divFooter.classList.add("pt-5");
+	  divFooter.classList.add("pt-5"); // Добавление изображения в галерею на JS
+
+	  const imgPort = new Image();
+	  imgPort.src = 'https://tattoo.msk.ru/wp-content/uploads/2022/06/SAVE_20220615_084408.jpg';
+	  const divPort = document.getElementById("div_1"); //const divCont = document.createElement("div");
+
+	  divPort.after(divCont); //divCont.setAttribute("class", "col-6 col-md-4");
+
+	  divPort.appendChild(imgPort);
 	}
 
 	exports.Button = button$1;
