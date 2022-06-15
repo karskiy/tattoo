@@ -2,9 +2,11 @@
     <?php echo '<h2 class="py-5 display-4">' . get_post_field('post_title', 71) . '</h2>'; ?>
 
     <div class="row">
+
         <?php
         $gallery = get_post_gallery_images(71);
-        $gallery = array_chunk($gallery, wp_is_mobile() ? 2: 3);
+        $col = wp_is_mobile() ? 5 : 3;
+        $gallery = array_chunk($gallery, $col);
         foreach ($gallery as $n => &$value) {
             print '<div id="div_'. $n .'" class="col-6 col-md-4">';
             foreach ($value as $key => $val) {
